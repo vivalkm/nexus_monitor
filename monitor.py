@@ -37,10 +37,10 @@ def save_state(state):
 # =========================
 def send_slack(messages):
     if not SLACK_WEBHOOK_URL:
-        print("No Slack webhook configured")
+        print("No Slack webhook configured!")
         return
 
-    text = "@here 🚨 *NEXUS Slot Update Detected*\n\n"
+    text = "🚨 *NEXUS Slot Update Detected*\n\n"
     text += "\n".join(messages)
 
     try:
