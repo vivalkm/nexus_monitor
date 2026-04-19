@@ -40,7 +40,7 @@ def send_slack(messages):
         print("No Slack webhook configured")
         return
 
-    text = "🚨 *NEXUS Slot Update Detected*\n\n"
+    text = "@here 🚨 *NEXUS Slot Update Detected*\n\n"
     text += "\n".join(messages)
 
     try:
