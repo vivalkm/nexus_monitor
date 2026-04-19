@@ -1,6 +1,7 @@
 name: NEXUS Slot Monitor
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
   
