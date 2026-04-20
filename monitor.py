@@ -1,5 +1,6 @@
 import requests
-import time
+from datetime import date
+from dateutil.relativedelta import relativedelta
 import os
 import json
 from datetime import datetime
@@ -55,9 +56,12 @@ def send_slack(messages):
 def check_slots():
     url = f"https://ttp.cbp.dhs.gov/schedulerapi/locations/{LOCATION_ID}/slots"
 
+    start_date = date.today()
+    end_date = date.today() + relativedelta(months=4)
+
     params = {
-        "startTimestamp": "2026-05-01T00:00:00",
-        "endTimestamp": "2026-07-01T00:00:00"
+        "startTimestamp": f"{start_date}T00:00:00",
+        "endTimestamp": f"{end_date}T00:00:00"
     }
 
     try:
