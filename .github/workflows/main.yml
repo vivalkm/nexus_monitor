@@ -1,9 +1,10 @@
 name: NEXUS Slot Monitor
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
-  workflow_dispatch:
+  
 
 # 🔐 REQUIRED for pushing state.json
 permissions:
